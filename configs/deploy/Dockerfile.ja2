@@ -1,0 +1,9 @@
+FROM {{ docker_image }}
+MAINTAINER Gary Leong <gwleong@gmail.com>
+############################################################
+
+RUN if [ -f /etc/nginx/sites-enabled/default ]; then rm -f /etc/nginx/sites-enabled/default; fi
+ADD nginx/sites-enabled/webapp.conf /etc/nginx/sites-enabled/webapp.conf
+
+EXPOSE 80
+WORKDIR $APP_BUNDLE_DIR/bundle

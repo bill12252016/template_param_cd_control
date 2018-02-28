@@ -1,0 +1,14 @@
+app:
+  restart: always
+  build: ./app
+  ports:
+    - "{{ deploy_port }}:80"
+  env_file:
+    - .env
+    - mongodb.env
+  command: passenger start --app-type node --startup-file main.js --port 80
+
+  #command: nginx
+  #The phusion passenger image already puts daemon off
+  #in /etc/nginx/nginx.conf
+  #command: nginx -g "daemon off;"

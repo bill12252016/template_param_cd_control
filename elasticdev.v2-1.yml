@@ -1,0 +1,73 @@
+global_arguments:
+   EnvVars:
+      METEOR_SETTINGS: '{{ METEOR_SETTINGS }}'
+   region: us-east-1
+   db_type: mongodb
+   sg_web_label: web
+infrastructure:
+   vpc:
+       stack_name: gary:::public::Cloud/Ec2/VPC/3tier_dbtype
+   db:
+       stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
+       dependencies: 
+           - infrastructure::vpc
+       arguments:
+          dbs: 1
+          size: t2.micro
+          sg_label: web
+   dockerhost:
+       stack_name: gary:::public::Deploy/Docker/Dev/SingleHost/create
+       dependencies: 
+           - infrastructure::vpc
+       arguments:
+          size: t2.micro
+          disksize: 57
+          sg_label: web
+build:
+   leaderboard:
+       stack_name: Stacks/CI/Meteor/React/Dev/main
+       repo: https://github/gear2000/leaderboard
+       triggered_branches:
+                 - master
+                 - dev
+       arguments:
+          AppGroup: gary:::public::Application/Build/Docker/Meteor/default
+          DockerProvider: docker.io
+          DockerUsername:  bill12252016
+          DockerConfigEnv: public
+          DockerRepoName: meteror-todos
+       results:
+           - deploy_1
+           - slack_1
+           - email_1
+   nginx:
+       stack_name: Projects/Templates/Docker/Basic/Register/main
+       repo: https://github/gear2000/nginx
+       triggered_branches:
+                 - dev
+       results:
+           - deploy_2
+   triggers:
+       - name: leaderboard
+         type: trigger
+         path: deploy::leaderboard
+         channels:
+             - deploy_1
+             - deploy_2
+       - name: developers_slack
+         type: slack
+         channels:
+             - slack_1
+         addresses:
+           - testchannel
+       - name: managers_email
+         type: email
+         channels:
+             - email_1
+         addresses:
+           - test@elasticdev.io
+deploy:
+    leaderboard_ngix:
+       stack_name: gary:::publlic::docker/meteor
+       arguments:
+           docker-compose: compose_yaml

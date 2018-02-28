@@ -1,2 +1,2 @@
-# template_param_cd_control
-Sample of paramerized control repo
+# sample_cd_controller
+controller for cd: infra, build, and deploy
