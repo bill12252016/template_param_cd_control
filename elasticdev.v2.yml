@@ -28,7 +28,6 @@ build:
    leaderboard:
        EnvVars:
           DOCKER_FILE_BUILD: configs/build/Dockerfile
-          DOCKER_BUILD_NAME: leaderboard
        stack_name: Stacks/CI/General/Dev/main
        repo_url: https://github.com/bill12252016/leaderboard
        repo_branch: dev
