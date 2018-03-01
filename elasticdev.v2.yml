@@ -26,8 +26,6 @@ infrastructure:
           disksize: 57
 build:
    leaderboard:
-       EnvVars:
-          DOCKER_FILE_BUILD: configs/build/Dockerfile
        stack_name: Stacks/CI/General/Dev/main
        repo_url: https://github.com/bill12252016/leaderboard
        repo_branch: dev
@@ -35,6 +33,7 @@ build:
                  - master
                  - dev
        arguments:
+          DOCKER_FILE_BUILD: configs/build/Dockerfile
           DockerProvider: docker.io
           DockerUsername:  bill12252016
           DockerRepoType: public
