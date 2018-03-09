@@ -16,13 +16,14 @@ infrastructure:
            - infrastructure::vpc
        arguments:
           dbs: 1
-          size: t2.micro
+          size: t2.nano
+          disksize: 60
    dockerhost:
        stack_name: Deploy/Docker/Dev/SingleHost/create
        dependencies: 
            - infrastructure::vpc
        arguments:
-          size: t2.micro
+          size: t2.medium
           disksize: 57
 build:
    leaderboard:
