@@ -1,1 +1,52 @@
-elasticdev.v2-mern.yml
+global_arguments:
+   EnvVars:
+      METEOR_SETTINGS: '{{ METEOR_SETTINGS }}'
+      FIRST_NAME: Robert
+      LAST_NAME: Fong
+   region: us-east-1
+   db_type: mongodb
+   sg_db_label: mongodb
+   sg_web_label: web
+infrastructure:
+   vpc:
+       stack_name: Cloud/Ec2/VPC/3tier_dbtype
+   dockerhost:
+       stack_name: Deploy/Docker/Dev/SingleHost/create
+       dependencies: 
+           - infrastructure::vpc
+       arguments:
+          size: t2.medium
+          disksize: 57
+build:
+   leaderboard:
+       stack_name: Stacks/CI/General/Dev/main
+       repo_url: https://github.com/bill12252016/leaderboard
+       repo_branch: dev
+       triggered_branches:
+                 - master
+                 - dev
+       arguments:
+          DOCKER_FILE_BUILD: configs/build/Dockerfile
+          DockerProvider: docker.io
+          DockerUsername:  bill12252016
+          DockerRepoType: public
+          DockerRepoName: meteror-todos
+       results:
+           - name: deploy_1
+   triggers:
+       - name: leaderboard
+         type: trigger
+         path: deploy::leaderboard_nginx
+         channels:
+             - deploy_1
+deploy:
+    leaderboard_nginx:
+       stack_name: Stacks/CD/Meteor/React/DeployOnly/main
+       arguments:
+           job_name: deploy
+           DOCKER_DEPLOY_DIR: configs/deploy
+           DOCKER_TEMPLATE_DIR: 
+                 - configs/deploy/docker-compose.ja2
+                 - configs/deploy/app/nginx/sites-available/webapp.ja2
+                 - configs/deploy/app/Dockerfile.ja2
+                 - configs/deploy/Dockerfile.ja2
