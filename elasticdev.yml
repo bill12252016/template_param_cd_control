@@ -5,11 +5,11 @@ global_arguments:
       LAST_NAME: Fong
    region: us-east-1
    db_type: mongodb
-   sg_db_label: mongodb
+   sg_db_label: database
    sg_web_label: web
 infrastructure:
    vpc:
-       stack_name: Cloud/Ec2/VPC/3tier_dbtype
+       stack_name: Cloud/Ec2/VPC/2tier
    dockerhost:
        stack_name: Deploy/Docker/Dev/SingleHost/create
        dependencies: 
