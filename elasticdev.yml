@@ -9,7 +9,7 @@ global_arguments:
    sg_web_label: web
 infrastructure:
    vpc:
-       stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public_ssh_access
+       stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public
    dockerhost:
        stack_name: Deploy/Docker/Dev/SingleHost/create
        dependencies: 
