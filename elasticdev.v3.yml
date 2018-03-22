@@ -1,6 +1,8 @@
 global_arguments:
    EnvVars:
       METEOR_SETTINGS: '{{ METEOR_SETTINGS }}'
+      FIRST_NAME: Robert
+      LAST_NAME: Fong
    region: us-east-1
    db_type: mongodb
    sg_db_label: database
@@ -10,7 +12,7 @@ infrastructure:
        stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public
    db:
        stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
-       dependencies:
+       dependencies: 
            - infrastructure::vpc
        arguments:
           dbs: 1
@@ -23,18 +25,6 @@ infrastructure:
           size: t2.medium
           disksize: 57
 build:
-   nginx:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
-       repo_branch: master
-       triggered_branches:
-                 - master
-       arguments:
-          DOCKER_FILE_BUILD: Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: nginx8087_89-ssl
    leaderboard:
        stack_name: Stacks/CI/General/Dev/main
        repo_url: https://github.com/bill12252016/leaderboard
@@ -45,7 +35,7 @@ build:
        arguments:
           DOCKER_FILE_BUILD: configs/build/Dockerfile
           DockerProvider: docker.io
-          DockerUsername: bill12252016
+          DockerUsername:  bill12252016
           DockerRepoType: public
           DockerRepoName: meteror-todos
        results:
