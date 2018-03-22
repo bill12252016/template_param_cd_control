@@ -30,7 +30,7 @@ build:
        triggered_branches:
                  - master
        arguments:
-          DOCKER_FILE_BUILD: Dockerfile
+          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
           DockerProvider: docker.io
           DockerUsername: bill12252016
           DockerRepoType: public
