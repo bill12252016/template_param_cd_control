@@ -42,20 +42,3 @@ build:
           DockerUsername: bill12252016
           DockerRepoType: public
           DockerRepoName: nginx8087_89-ssl
-   triggers:
-       - name: leaderboard
-         type: trigger
-         path: deploy::leaderboard_nginx
-         channels:
-             - deploy_1
-deploy:
-    leaderboard_nginx:
-       stack_name: Stacks/CD/Meteor/React/DeployOnly/main
-       arguments:
-           job_name: deploy
-           DOCKER_DEPLOY_DIR: configs/deploy
-           DOCKER_TEMPLATE_DIR: 
-                 - configs/deploy/docker-compose.ja2
-                 - configs/deploy/app/nginx/sites-available/webapp.ja2
-                 - configs/deploy/app/Dockerfile.ja2
-                 - configs/deploy/Dockerfile.ja2
