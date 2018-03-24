@@ -16,10 +16,34 @@ infrastructure:
           size: t2.medium
           disksize: 57
 build:
-   nginx:
+   nginx-1:
        stack_name: Stacks/CI/General/Dev/main
        repo_url: https://github.com/bill12252016/nginx8087_89-ssl
        repo_branch: master
+       triggered_branches:
+                 - dev1
+       arguments:
+          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+          DockerProvider: docker.io
+          DockerUsername: bill12252016
+          DockerRepoType: public
+          DockerRepoName: nginx8087_89-ssl
+   nginx-2:
+       stack_name: Stacks/CI/General/Dev/main
+       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+       repo_branch: dev2
+       triggered_branches:
+                 - master
+       arguments:
+          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+          DockerProvider: docker.io
+          DockerUsername: bill12252016
+          DockerRepoType: public
+          DockerRepoName: nginx8087_89-ssl
+   nginx-3:
+       stack_name: Stacks/CI/General/Dev/main
+       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+       repo_branch: dev3
        triggered_branches:
                  - master
        arguments:
