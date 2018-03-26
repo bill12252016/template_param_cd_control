@@ -8,14 +8,14 @@ global_arguments:
 infrastructure:
    vpc:
        stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public
-   db:
-       stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
-       dependencies: 
-           - infrastructure::vpc
-       arguments:
-          dbs: 1
-          size: t2.nano
-          disksize: 10
+#   db:
+#       stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
+#       dependencies: 
+#           - infrastructure::vpc
+#       arguments:
+#          dbs: 1
+#          size: t2.nano
+#          disksize: 10
    dockerhost:
        stack_name: Deploy/Docker/Dev/SingleHost/create
        dependencies: 
@@ -89,35 +89,35 @@ build:
           DockerUsername: bill12252016
           DockerRepoType: public
           DockerRepoName: nginx8087_89-ssl
-   leaderboard:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/leaderboard
-       repo_branch: dev
-       triggered_branches:
-                 - master
-                 - dev
-       arguments:
-          DOCKER_FILE_BUILD: configs/build/Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: meteror-todos
-       results:
-           - name: deploy_1
-   triggers:
-       - name: leaderboard
-         type: trigger
-         path: deploy::leaderboard_nginx
-         channels:
-             - deploy_1
-deploy:
-    leaderboard_nginx:
-       stack_name: Stacks/CD/Meteor/React/DeployOnly/main
-       arguments:
-           job_name: deploy
-           DOCKER_DEPLOY_DIR: configs/deploy
-           DOCKER_TEMPLATE_DIR: 
-                 - configs/deploy/docker-compose.ja2
-                 - configs/deploy/app/nginx/sites-available/webapp.ja2
-                 - configs/deploy/app/Dockerfile.ja2
-                 - configs/deploy/Dockerfile.ja2
+#   leaderboard:
+#       stack_name: Stacks/CI/General/Dev/main
+#       repo_url: https://github.com/bill12252016/leaderboard
+#       repo_branch: dev
+#       triggered_branches:
+#                 - master
+#                 - dev
+#       arguments:
+#          DOCKER_FILE_BUILD: configs/build/Dockerfile
+#          DockerProvider: docker.io
+#          DockerUsername: bill12252016
+#          DockerRepoType: public
+#          DockerRepoName: meteror-todos
+#       results:
+#           - name: deploy_1
+#   triggers:
+#       - name: leaderboard
+#         type: trigger
+#         path: deploy::leaderboard_nginx
+#         channels:
+#             - deploy_1
+#deploy:
+#    leaderboard_nginx:
+#       stack_name: Stacks/CD/Meteor/React/DeployOnly/main
+#       arguments:
+#           job_name: deploy
+#           DOCKER_DEPLOY_DIR: configs/deploy
+#           DOCKER_TEMPLATE_DIR: 
+#                 - configs/deploy/docker-compose.ja2
+#                 - configs/deploy/app/nginx/sites-available/webapp.ja2
+#                 - configs/deploy/app/Dockerfile.ja2
+#                 - configs/deploy/Dockerfile.ja2
