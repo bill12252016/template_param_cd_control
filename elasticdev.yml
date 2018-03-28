@@ -37,58 +37,58 @@ build:
           DockerUsername: bill12252016
           DockerRepoType: public
           DockerRepoName: nginx8087_89-ssl
-   nginx-2:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
-       repo_branch: master
-       triggered_branches:
-                 - master
-                 - dev2
-       arguments:
-          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: nginx8087_89-ssl
-   nginx-3:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
-       repo_branch: master
-       triggered_branches:
-                 - master
-                 - dev3
-       arguments:
-          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: nginx8087_89-ssl
-   nginx-4:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
-       repo_branch: master
-       triggered_branches:
-                 - master
-                 - dev4
-       arguments:
-          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: nginx8087_89-ssl
-   nginx-5:
-       stack_name: Stacks/CI/General/Dev/main
-       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
-       repo_branch: master
-       triggered_branches:
-                 - master
-                 - dev5
-       arguments:
-          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
-          DockerProvider: docker.io
-          DockerUsername: bill12252016
-          DockerRepoType: public
-          DockerRepoName: nginx8087_89-ssl
+#   nginx-2:
+#       stack_name: Stacks/CI/General/Dev/main
+#       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+#       repo_branch: master
+#       triggered_branches:
+#                 - master
+#                 - dev2
+#       arguments:
+#          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+#          DockerProvider: docker.io
+#          DockerUsername: bill12252016
+#          DockerRepoType: public
+#          DockerRepoName: nginx8087_89-ssl
+#   nginx-3:
+#       stack_name: Stacks/CI/General/Dev/main
+#       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+#       repo_branch: master
+#       triggered_branches:
+#                 - master
+#                 - dev3
+#       arguments:
+#          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+#          DockerProvider: docker.io
+#          DockerUsername: bill12252016
+#          DockerRepoType: public
+#          DockerRepoName: nginx8087_89-ssl
+#   nginx-4:
+#       stack_name: Stacks/CI/General/Dev/main
+#       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+#       repo_branch: master
+#       triggered_branches:
+#                 - master
+#                 - dev4
+#       arguments:
+#          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+#          DockerProvider: docker.io
+#          DockerUsername: bill12252016
+#          DockerRepoType: public
+#          DockerRepoName: nginx8087_89-ssl
+#   nginx-5:
+#       stack_name: Stacks/CI/General/Dev/main
+#       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
+#       repo_branch: master
+#       triggered_branches:
+#                 - master
+#                 - dev5
+#       arguments:
+#          DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
+#          DockerProvider: docker.io
+#          DockerUsername: bill12252016
+#          DockerRepoType: public
+#          DockerRepoName: nginx8087_89-ssl
 #   leaderboard:
 #       stack_name: Stacks/CI/General/Dev/main
 #       repo_url: https://github.com/bill12252016/leaderboard
