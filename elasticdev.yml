@@ -37,10 +37,9 @@ build:
           DockerUsername: bill12252016
           DockerRepoType: public
           DockerRepoName: nginx8087_89-ssl
-       results:
-          EnvVars:
-              rename:
-                DockerImage: DockerImage_nginx-1
+       rename:
+           EnvVars:
+             DockerImage: DockerImage_nginx-1
 #   nginx-2:
 #       stack_name: Stacks/CI/General/Dev/main
 #       repo_url: https://github.com/bill12252016/nginx8087_89-ssl
