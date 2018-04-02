@@ -13,7 +13,7 @@ infrastructure:
        dependencies: 
            - infrastructure::vpc
        arguments:
-          dbs: 1
+          dbs: 3
           size: t2.nano
           disksize: 10
    dockerhost:
