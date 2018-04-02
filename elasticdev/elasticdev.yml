@@ -56,6 +56,4 @@ deploy:
            DOCKER_DEPLOY_DIR: configs/deploy
            DOCKER_TEMPLATE_DIR: 
                  - configs/deploy/docker-compose.ja2
-                 - configs/deploy/app/nginx/sites-available/webapp.ja2
-                 - configs/deploy/app/Dockerfile.ja2
                  - configs/deploy/Dockerfile.ja2

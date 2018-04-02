@@ -1,6 +1,3 @@
-FROM {{ DOCKER_IMAGE_LEADERBOARD` }}
-MAINTAINER Gary Leong <gwleong@gmail.com>
-############################################################
-
+FROM {{ DOCKER_IMAGE_LEADERBOARD }}
 EXPOSE 80
 WORKDIR $APP_BUNDLE_DIR/bundle
