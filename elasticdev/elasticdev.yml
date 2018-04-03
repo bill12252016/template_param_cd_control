@@ -45,7 +45,7 @@ deploy:
        arguments:
            job_name: deploy
            docker_guest: test_nginx
-           http_port: 8090
+           http_port: 8087
            ssh_port: 22010
            DOCKER_TEMPLATE_FILES:
                  - Dockerfile: configs/deploy/nginx-ssl/Dockerfile.ja2
