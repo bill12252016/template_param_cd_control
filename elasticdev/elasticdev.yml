@@ -13,7 +13,7 @@ infrastructure:
        dependencies: 
            - infrastructure::vpc
        arguments:
-          dbs: 3
+          dbs: 1
           size: t2.nano
           disksize: 10
    dockerhost:
@@ -50,9 +50,12 @@ build:
              - deploy_1
 deploy:
     leaderboard_nginx:
-       stack_name: Stacks/CD/Meteor/React/DeployOnly/main
+       stack_name: Stacks/CD/General/DeployOnly/main
        arguments:
            job_name: deploy
+           docker_guest: leaderboard_nginx
+           http_port: 8090
+           ssh_port: 22010
            DOCKER_DEPLOY_DIR: configs/deploy
            DOCKER_TEMPLATE_DIR: 
                  - configs/deploy/docker-compose.ja2
