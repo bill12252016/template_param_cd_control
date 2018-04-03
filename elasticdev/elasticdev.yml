@@ -56,7 +56,8 @@ deploy:
            docker_guest: leaderboard_nginx
            http_port: 8090
            ssh_port: 22010
-           DOCKER_DEPLOY_DIR: configs/deploy
-           DOCKER_TEMPLATE_DIR: 
-                 - configs/deploy/docker-compose.ja2
-                 - configs/deploy/Dockerfile.ja2
+           DOCKER_TEMPLATE_FILES:
+                 - Dockerfile: configs/deploy/Dockerfile.ja2
+                   env_var_replacements: True
+                 - DockerComposeFile: configs/deploy/docker-compose.ja2
+                   env_var_replacements: True
