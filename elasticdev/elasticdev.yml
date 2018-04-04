@@ -23,6 +23,7 @@ build:
        triggered_branches:
                  - dev1
        arguments:
+          ssh_port: 22010
           DOCKER_FILE_BUILD: configs/build/nginx-ssl/Dockerfile
           DockerProvider: docker.io
           DockerUsername: bill12252016
@@ -46,7 +47,7 @@ deploy:
            job_name: deploy
            docker_guest: test_nginx
            http_port: 8087
-           ssh_port: 22010
+           ssh_port: 22020
            DOCKER_TEMPLATE_FILES:
                  - Dockerfile: configs/deploy/nginx-ssl/Dockerfile.ja2
                    env_var_replacements: True
