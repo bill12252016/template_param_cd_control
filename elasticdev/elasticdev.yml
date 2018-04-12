@@ -8,6 +8,14 @@ global_arguments:
 infrastructure:
    vpc:
        stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public
+   db:
+       stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
+       dependencies:
+           - infrastructure::vpc
+       arguments:
+          dbs: 1
+          size: t2.nano
+          disksize: 50
    dockerhost:
        stack_name: Deploy/Docker/Dev/SingleHost/create
        dependencies: 
