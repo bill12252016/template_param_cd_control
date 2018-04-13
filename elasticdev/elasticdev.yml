@@ -44,7 +44,6 @@ deploy:
     test_nginx:
        stack_name: Stacks/CD/General/DeployOnly/main
        arguments:
-           job_name: test_nginx
            http_port: 8087
            ssh_port: 22020
            DOCKER_TEMPLATE_FILES:
