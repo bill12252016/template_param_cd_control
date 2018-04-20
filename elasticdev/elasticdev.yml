@@ -1,6 +1,7 @@
 global_arguments:
    EnvVars:
       METEOR_SETTINGS: '{{ METEOR_SETTINGS }}'
+      APP_BUNDLE_DIR: /opt/meteor/dist/bundle
    region: us-east-1
    db_type: mongodb
    sg_db_label: database
