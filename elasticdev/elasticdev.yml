@@ -54,6 +54,7 @@ deploy:
        arguments:
            EnvVars:
                APP_BUNDLE_DIR: /opt/meteor/dist/bundle
+               ROOT_URL: http://127.0.0.1
            DOCKER_TEMPLATE_FILES:
                  - template_file: configs/deploy/Dockerfile.ja2
                  - template_file: configs/deploy/docker-compose.yml.ja2
