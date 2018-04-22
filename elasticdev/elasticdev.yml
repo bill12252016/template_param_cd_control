@@ -8,16 +8,16 @@ global_arguments:
    sg_web_label: web
 infrastructure:
    vpc:
-       stack_name: Cloud/Ec2/VPC/2tier/Database/Web/public
+       stack_name: aws_vpc_2tier
    db:
-       stack_name: gary:::public::Cluster/Ubuntu/Ec2/param_db
+       stack_name: aws_ec2_mongodb
        dependencies:
            - infrastructure::vpc
        arguments:
           dbs: 1
           size: t2.nano
    dockerhost:
-       stack_name: Deploy/Docker/Dev/SingleHost/create
+       stack_name: aws_ec2_dockerhost_dev
        dependencies: 
            - infrastructure::vpc
        arguments:
@@ -25,7 +25,7 @@ infrastructure:
           disksize: 50
 build:
    leaderboard:
-       stack_name: Stacks/CI/General/Dev/main
+       stack_name: build_dev
        repo_url: https://github.com/bill12252016/leaderboard
        repo_branch: dev
        triggered_branches:
@@ -50,7 +50,7 @@ build:
              - deploy_1
 deploy:
     leaderboard_nginx:
-       stack_name: Stacks/CD/General/DeployOnly/main
+       stack_name: deploy_dev
        arguments:
            EnvVars:
                APP_BUNDLE_DIR: /opt/meteor/dist/bundle
