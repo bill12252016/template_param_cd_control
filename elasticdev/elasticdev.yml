@@ -11,15 +11,11 @@ infrastructure:
        stack_name: aws_vpc_2tier
    db:
        stack_name: aws_ec2_mongodb
-       dependencies:
-           - infrastructure::vpc
        arguments:
           dbs: 1
           size: t2.nano
    dockerhost:
        stack_name: aws_ec2_dockerhost_dev
-       dependencies: 
-           - infrastructure::vpc
        arguments:
           size: t2.medium
           disksize: 50
