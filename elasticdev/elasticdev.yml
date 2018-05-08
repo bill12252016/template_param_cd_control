@@ -44,5 +44,4 @@ deploy:
        stack_name: deploy_dev
        arguments:
            DOCKER_TEMPLATE_FILES:
-                 - template_file: configs/deploy/Dockerfile.ja2
-                 - template_file: configs/deploy/docker-compose.yml.ja2
+              - template_dir: configs/deploy

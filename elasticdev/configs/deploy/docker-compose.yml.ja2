@@ -1,4 +1,4 @@
-guest:
+deploy_guest:
   restart: always
   build: ./
   ports:
