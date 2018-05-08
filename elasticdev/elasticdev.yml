@@ -41,7 +41,7 @@ build:
              - deploy_1
 deploy:
     flask_dev:
-       stack_name: deploy_dev
+       stack_name: deploy_dev_gitops
        arguments:
            DOCKER_TEMPLATE_FILES:
               - template_dir: configs/deploy
