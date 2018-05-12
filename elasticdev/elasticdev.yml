@@ -50,5 +50,11 @@ deploy:
     flask_dev:
        stack_name: deploy_dev_gitops
        arguments:
+           EnvVars:
+               MYSQL_DB_NAME: flask
+               MYSQL_DB_USER: sample
+               MYSQL_DB_PASSWORD: admin123
+           PRE_SCRIPTS:
+              - scripts/createdb.sh
            DOCKER_TEMPLATE_FILES:
               - template_dir: configs/deploy
