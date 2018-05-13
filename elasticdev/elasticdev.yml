@@ -55,7 +55,7 @@ deploy:
                MYSQL_DB_USER: sample
                MYSQL_DB_PASSWORD: admin123
            PRE_SCRIPTS:
-              - scripts/createdb.sh
-              - scripts/create_schema.sh
+              - createdb.sh
+              - create_schema.sh
            DOCKER_TEMPLATE_FILES:
               - template_dir: configs/deploy
