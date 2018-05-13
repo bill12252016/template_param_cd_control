@@ -14,13 +14,13 @@ infrastructure:
        arguments:
           size: t2.micro
           disksize: 50
-   db:
-       stack_name: aws_db_rds
-       arguments:
-          flavor: "db.t2.micro"
-          size: 5
-          engine: "MySQL"
-          az: False
+#   db:
+#       stack_name: aws_db_rds
+#       arguments:
+#          flavor: "db.t2.micro"
+#          size: 5
+#          engine: "MySQL"
+#          az: False
 build:
    flask_sample:
        stack_name: build_dev
