@@ -16,14 +16,8 @@ Q3="GRANT ALL PRIVILEGES ON $MYSQL_DB_NAME.* TO $MYSQL_DB_USER@'%';"
 Q4="FLUSH PRIVILEGES;"
 SQL="${Q1}${Q2}${Q3}${Q4}"
 
-STATUS=`$MYSQL -u "$MYSQL_ROOT_USER" -p"${MYSQL_ROOT_PASSWORD}" -e "$SQL" -h localhost; echo $?`
-echo ""
-
-if [ $STATUS -eq 0 ]; then
-    echo "Database credentials added to localhost"
-    echo ""
-    exit 0
-fi
+CMD="$MYSQL -u \"$MYSQL_ROOT_USER\" -p\"${MYSQL_ROOT_PASSWORD}\" -e \"$SQL\" -h $MYSQL_HOST; echo $?"
+echo "$CMD"
 
 STATUS=`$MYSQL -u "$MYSQL_ROOT_USER" -p"${MYSQL_ROOT_PASSWORD}" -e "$SQL" -h $MYSQL_HOST; echo $?`
 
