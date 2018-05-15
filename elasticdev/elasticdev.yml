@@ -55,6 +55,7 @@ deploy:
                MYSQL_DB_USER: sample
                MYSQL_DB_PASSWORD: admin123
            PRE_SCRIPTS:
+              - install_mysql.sh
               - createdb.sh
               - create_schema.sh
            DOCKER_TEMPLATE_FILES:
