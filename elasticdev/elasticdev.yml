@@ -5,7 +5,7 @@ global_arguments:
    db_type: mysql
    sg_db_label: database
    sg_web_label: web
-   git_ops: True
+   gitops: True
 infrastructure:
    vpc:
        stack_name: aws_vpc_2tier
@@ -23,8 +23,7 @@ infrastructure:
           az: False
 build:
    flask_sample:
-       stack_name: gary:::public::Stacks/CI/General/Dev/DirectPull/main
-       #stack_name: build_dev
+       stack_name: build_dev
        repo_url: https://github.com/bill12252016/flask_sample
        repo_branch: master
        triggered_branches:
@@ -49,7 +48,7 @@ build:
              - deploy_1
 deploy:
     flask_dev:
-       stack_name: deploy_dev_gitops
+       stack_name: deploy_dev
        arguments:
            EnvVars:
                MYSQL_DB_NAME: flask
