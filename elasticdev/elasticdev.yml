@@ -22,13 +22,12 @@ infrastructure:
           engine: "MySQL"
           az: False
 build:
-   flask_sample:
+   flask_branch_dev1:
        stack_name: build_dev
        repo_url: https://github.com/bill12252016/flask_sample
        repo_branch: master
        triggered_branches:
-                 - master
-                 - dev
+                 - dev1
        arguments:
           DOCKER_FILE_BUILD: configs/build/Dockerfile
           DockerProvider: docker.io
@@ -36,22 +35,57 @@ build:
           DockerRepoType: public
           DockerRepoName: flask_sample
        results:
-           - name: deploy_1
+           - name: flask_branch_channel_dev1
+       rename:
+           EnvVars:
+             DockerImage: DOCKER_IMAGE_FLASK
+   flask_branch_dev2:
+       stack_name: build_dev
+       repo_url: https://github.com/bill12252016/flask_sample
+       repo_branch: master
+       triggered_branches:
+                 - dev2
+       arguments:
+          DOCKER_FILE_BUILD: configs/build/Dockerfile
+          DockerProvider: docker.io
+          DockerUsername: bill12252016
+          DockerRepoType: public
+          DockerRepoName: flask_sample
+       results:
+           - name: flask_branch_channel_dev2
        rename:
            EnvVars:
              DockerImage: DOCKER_IMAGE_FLASK
    triggers:
-       - name: flask_sample
+       - name: flask_branch_dev1
          type: trigger
          path: deploy::flask_dev
          channels:
-             - deploy_1
+             - flask_branch_channel_dev1
+       - name: flask_branch_dev2
+         type: trigger
+         path: deploy::flask_dev
+         channels:
+             - flask_branch_channel_dev2
 deploy:
-    flask_dev:
+    flask_dev1:
        stack_name: deploy_dev
        arguments:
            EnvVars:
-               MYSQL_DB_NAME: flask
+               MYSQL_DB_NAME: flask_dev1
+               MYSQL_DB_USER: sample
+               MYSQL_DB_PASSWORD: admin123
+           PRE_SCRIPTS:
+              - install_mysql.sh
+              - createdb.sh
+              - create_schema.sh
+           DOCKER_TEMPLATE_FILES:
+              - template_dir: configs/deploy
+    flask_dev2:
+       stack_name: deploy_dev
+       arguments:
+           EnvVars:
+               MYSQL_DB_NAME: flask_dev2
                MYSQL_DB_USER: sample
                MYSQL_DB_PASSWORD: admin123
            PRE_SCRIPTS:
