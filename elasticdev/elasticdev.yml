@@ -22,7 +22,7 @@ infrastructure:
           engine: "MySQL"
           az: False
 build:
-   flask_sample:
+   flask_sample_1:
        stack_name: build_dev
        repo_url: https://github.com/bill12252016/flask_sample
        repo_branch: dev1
