@@ -52,7 +52,7 @@ build:
           DockerRepoType: public
           DockerRepoName: flask_sample
        results:
-           - name: deploy_1
+           - name: deploy_2
        rename:
            EnvVars:
              DockerImage: DOCKER_IMAGE_FLASK
