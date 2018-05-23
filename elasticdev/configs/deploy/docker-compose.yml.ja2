@@ -1,4 +1,4 @@
-guest:
+{{ DOCKER_DEPLOY_NAME }}:
   restart: always
   build: ./
   ports:
