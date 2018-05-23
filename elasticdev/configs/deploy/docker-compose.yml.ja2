@@ -1,4 +1,4 @@
-$DOCKER_DEPLOY_NAME:
+guest:
   restart: always
   build: ./
   ports:
