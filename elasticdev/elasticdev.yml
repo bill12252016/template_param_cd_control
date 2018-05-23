@@ -12,7 +12,7 @@ infrastructure:
    dockerhost:
        stack_name: aws_ec2_dockerhost_dev
        arguments:
-          size: t2.micro
+          size: t2.medium
           disksize: 50
    db:
        stack_name: aws_db_rds
