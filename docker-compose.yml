@@ -1,6 +1,6 @@
-cs_jerry_deploy_flask_dev1:
+cs_jerry_deploy_flask_dev2:
   restart: always
-  build: ./
+  image: docker.io/bill12252016/flask_sample:TPOLWXELOGCNGXMG
   ports:
     - "$HTTP_PORT:80"
   env_file:
