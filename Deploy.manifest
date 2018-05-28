@@ -1,0 +1,26 @@
+# Deploy Manifest ID: 37DR3I2STXF0TH3I0E2HWUC6T16QPG
+# Automated Deploy by ED through GitOps
+
+################################
+# Repo/Commit Info
+################################
+
+**** https://github.com/bill12252016/flask_sample ****
+commit_url: https://github.com/bill12252016/flask_sample/commit/04f777778f2e0b21a6671e3bc4c67fb9b10b5aac
+commit_hash: 04f777778f2e0b21a6671e3bc4c67fb9b10b5aac
+message: testing change new string ixRasWnh
+
+author: Automatic Script
+committer: Automatic Script
+authored_date: 2018-05-25 05:32:25
+committed_date: 2018-05-25 05:32:25
+
+################################
+# Environment Variables from build
+################################
+
+DockerImageName: DLFMMMOCRFGNEGJQ
+DockerImageTag: DLFMMMOCRFGNEGJQ
+DOCKER_FILE: elasticdev/configs/build/Dockerfile
+SSH_PORT: 22001
+DOCKER_IMAGE_FLASK: docker.io/bill12252016/flask_sample:DLFMMMOCRFGNEGJQ
