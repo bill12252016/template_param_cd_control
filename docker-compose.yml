@@ -1,4 +1,4 @@
-{{ DOCKER_DEPLOY_NAME }}:
+cs_troy_deploy_flask_dev2:
   restart: always
   build: ./
   ports:
