@@ -1,4 +1,4 @@
-cs_john_deploy_flask_dev1:
+cs_john_deploy_flask_dev2:
   restart: always
   image: docker.io/bill12252016/flask_sample:WXZSVOTPJQHKIOMT
   ports:
