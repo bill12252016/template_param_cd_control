@@ -1,4 +1,4 @@
-# Deploy Manifest ID: MOUM3OXA9IDK89I850YBYPTFPVBUHC
+# Deploy Manifest ID: YNE0IGYXPYV0AYHLI8JS3HZB1QEVPO
 # Automated Deploy by ED through GitOps
 
 ################################
@@ -19,8 +19,8 @@ committed_date: 2018-05-28 04:50:46
 # Environment Variables from build
 ################################
 
-DockerImageName: OSLDCIXQEZLRBSJA
-DockerImageTag: OSLDCIXQEZLRBSJA
+DockerImageName: TSDWWGQSFQTXAHWY
+DockerImageTag: TSDWWGQSFQTXAHWY
 DOCKER_FILE: elasticdev/configs/build/Dockerfile
 SSH_PORT: 22001
-DOCKER_IMAGE_FLASK: docker.io/bill12252016/flask_sample:OSLDCIXQEZLRBSJA
+DOCKER_IMAGE_FLASK: docker.io/bill12252016/flask_sample:TSDWWGQSFQTXAHWY

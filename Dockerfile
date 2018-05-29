@@ -1,2 +1,2 @@
-FROM docker.io/bill12252016/flask_sample:OSLDCIXQEZLRBSJA
+FROM docker.io/bill12252016/flask_sample:TSDWWGQSFQTXAHWY
 EXPOSE 80
