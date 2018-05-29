@@ -1,4 +1,4 @@
-# Deploy Manifest ID: RG7MLBPVZ3OZVS8W4KS4BNLXYSLR32
+# Deploy Manifest ID: IJGTOJUQ8RNO5MP76NTE77QFARRG5R
 # Automated Deploy by ED through GitOps
 
 ################################
@@ -6,20 +6,20 @@
 ################################
 
 **** https://github.com/bill12252016/flask_sample ****
-commit_url: https://github.com/bill12252016/flask_sample/commit/6bad608e1463476febadb83ecfefd5f7e3091c54
-commit_hash: 6bad608e1463476febadb83ecfefd5f7e3091c54
-message: testing change new string p5bUAzk9
+commit_url: https://github.com/bill12252016/flask_sample/commit/aa9153575c7ed182c12fbb4888a83a337a7935e3
+commit_hash: aa9153575c7ed182c12fbb4888a83a337a7935e3
+message: testing change new string RHR0Eqyc
 author: Automatic Script
 committer: Automatic Script
-authored_date: 2018-05-29T08:39:44Z
-committed_date: 2018-05-29T08:39:44Z
+authored_date: 2018-05-29T08:52:22Z
+committed_date: 2018-05-29T08:52:22Z
 
 ################################
 # Environment Variables from build
 ################################
 
-DockerImageName: PIRMLNRVGTNBKQHJ
-DockerImageTag: PIRMLNRVGTNBKQHJ
+DockerImageName: HQJTFAHIWIXVDHAF
+DockerImageTag: HQJTFAHIWIXVDHAF
 DOCKER_FILE: elasticdev/configs/build/Dockerfile
 SSH_PORT: 22002
-DOCKER_IMAGE_FLASK: docker.io/bill12252016/flask_sample:PIRMLNRVGTNBKQHJ
+DOCKER_IMAGE_FLASK: docker.io/bill12252016/flask_sample:HQJTFAHIWIXVDHAF
