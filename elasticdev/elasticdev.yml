@@ -5,7 +5,6 @@ global_arguments:
    db_type: mysql
    sg_db_label: database
    sg_web_label: web
-   gitops: True
 infrastructure:
    vpc:
        stack_name: aws_vpc_2tier
@@ -30,10 +29,10 @@ build:
                  - dev1
        arguments:
           DOCKER_FILE_BUILD: configs/build/Dockerfile
-          DOCKER_PROVIDER: docker.io
-          DOCKER_USERNAME: bill12252016
-          DOCKER_REPO_TYPE: public
-          DOCKER_REPO_NAME: flask_sample
+          DockerProvider: docker.io
+          DockerUsername: bill12252016
+          DockerRepoType: public
+          DockerRepoName: meteror-todos
        results:
            - name: deploy_1
        rename:
