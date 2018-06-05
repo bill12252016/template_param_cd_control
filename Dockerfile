@@ -1,2 +1,2 @@
-FROM docker.io/bill12252016/flask_sample:RREUMZQAYDOEXXJD
+FROM docker.io/bill12252016/meteror-todos:TUVULTCFXICODRJM
 EXPOSE 80
