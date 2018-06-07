@@ -1,5 +1,5 @@
 global_arguments:
-   region: us-west-2
+   region: ap-southeast-1
    db_type: mysql
    sg_db_label: database
    sg_web_label: web
