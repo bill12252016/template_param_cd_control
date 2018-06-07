@@ -1,4 +1,4 @@
-{{ DOCKER_DEPLOY_NAME }}:
+cs_jump_deploy_flask_dev1:
   restart: always
   build: ./
   ports:
