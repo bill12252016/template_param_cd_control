@@ -1,6 +1,4 @@
 global_arguments:
-   EnvVars:
-      ED_NAME: bill
    region: us-west-2
    db_type: mysql
    sg_db_label: database
