@@ -1,2 +1,2 @@
-FROM docker.io/bill12252016/meteror-todos:BNWLDFHDROWRYZQN
+FROM docker.io/bill12252016/meteror-todos:OFHQVIMIKBACWBBS
 EXPOSE 80
