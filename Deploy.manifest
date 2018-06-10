@@ -1,4 +1,4 @@
-# Deploy Manifest ID: FCETKHISCTLPJOBU44LGM3525EIG9C
+# Deploy Manifest ID: L8LEJ1X466F0JUGDVB788J2TGGGQMK
 # Automated Deploy by ED through GitOps
 
 ################################
@@ -6,13 +6,13 @@
 ################################
 
 **** https://github.com/bill12252016/flask_sample ****
-commit_url: https://github.com/bill12252016/flask_sample/commit/6239f3344aeafded9d40fc8e943f8ab8b7a7af3c
-commit_hash: 6239f3344aeafded9d40fc8e943f8ab8b7a7af3c
-message: testing change new string NXWdfh90
+commit_url: https://github.com/bill12252016/flask_sample/commit/8898edfe1b497c9d781826390f8343eb992cbde0
+commit_hash: 8898edfe1b497c9d781826390f8343eb992cbde0
+message: testing change new string L6xlE7m0
 author: Automatic Script
 committer: Automatic Script
-authored_date: 2018-06-10T06:13:04Z
-committed_date: 2018-06-10T06:13:04Z
+authored_date: 2018-06-10T07:13:09Z
+committed_date: 2018-06-10T07:13:09Z
 
 ################################
 # Environment Variables from build
@@ -20,7 +20,7 @@ committed_date: 2018-06-10T06:13:04Z
 
 DOCKER_FILE: elasticdev/configs/build/Dockerfile
 SSH_PORT: 22001
-DOCKER_IMAGE_FLASK: docker.io/bill12252016/meteror-todos:WGWWHYNKTRDOHFME
-DOCKER_IMAGE_NAME: WGWWHYNKTRDOHFME
-DOCKER_IMAGE_TAG: WGWWHYNKTRDOHFME
-image_tag: WGWWHYNKTRDOHFME
+DOCKER_IMAGE_FLASK: docker.io/bill12252016/meteror-todos:GKFQBUMCUICXHTWK
+DOCKER_IMAGE_NAME: GKFQBUMCUICXHTWK
+DOCKER_IMAGE_TAG: GKFQBUMCUICXHTWK
+image_tag: GKFQBUMCUICXHTWK
