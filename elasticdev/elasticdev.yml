@@ -6,11 +6,11 @@ global_arguments:
 infrastructure:
    vpc:
        stack_name: aws_vpc_2tier
-   dockerhost:
-       stack_name: aws_ec2_dockerhost_dev
-       arguments:
-          size: t2.nano
-          disksize: 50
+#   dockerhost:
+#       stack_name: aws_ec2_dockerhost_dev
+#       arguments:
+#          size: t2.nano
+#          disksize: 50
 #   db:
 #       stack_name: aws_db_rds
 #       arguments:
