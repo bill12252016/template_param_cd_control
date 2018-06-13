@@ -6,7 +6,14 @@ global_arguments:
 infrastructure:
    vpc:
        stack_name: aws_vpc_2tier
+   dockerhost:
+       stack_name: aws_ec2_dockerhost_dev
+       arguments:
+          size: t2.nano
+          disksize: 50
    kubernetes:
+       dependencies:
+           - infrastructure::dockerhost
        stack_name: gary:::public::Cluster/Kubernetes/Ec2/VPC/main
        arguments:
           domain: test100.elasticdeploy.com
@@ -15,11 +22,6 @@ infrastructure:
           master_node_size: t2.micro
           aws_access_key_id: fake_aws_access_key_id
           aws_secret_access_key: fake_aws_secret_access_key
-   dockerhost:
-       stack_name: aws_ec2_dockerhost_dev
-       arguments:
-          size: t2.nano
-          disksize: 50
 #   db:
 #       stack_name: aws_db_rds
 #       arguments:
