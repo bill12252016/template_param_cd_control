@@ -24,8 +24,6 @@ infrastructure:
           parent_domain: elasticdeploy.com
           kube_node_size: t2.micro
           master_node_size: t2.micro
-          aws_access_key_id: AKIAJRPD6SQ53WIQTQ3A
-          aws_secret_access_key: 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
 #   db:
 #       stack_name: aws_db_rds
 #       arguments:
