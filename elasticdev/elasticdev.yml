@@ -17,8 +17,9 @@ infrastructure:
        stack_name: gary:::public::Cluster/Kubernetes/Ec2/VPC/main
        arguments:
           AddCreds: 
-              - aws: aws
-              - docker: docker
+              - name: aws
+                type: aws
+              - name: docker
           domain: test200.elasticdeploy.com
           parent_domain: elasticdeploy.com
           kube_node_size: t2.micro
