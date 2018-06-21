@@ -24,7 +24,12 @@ infrastructure:
           parent_domain: elasticdeploy.com
           kube_node_size: t2.micro
           master_node_size: t2.micro
-#   db:
+#   mongodb:
+#       stack_name: aws_ec2_mongodb
+#       arguments:
+#          dbs: 1
+#          size: t2.nano
+#   rds_mysql:
 #       stack_name: aws_db_rds
 #       arguments:
 #          flavor: "db.t2.micro"
