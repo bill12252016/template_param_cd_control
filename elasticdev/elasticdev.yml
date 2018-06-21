@@ -1,33 +1,48 @@
 global_arguments:
-   EnvVars:
-      METEOR_SETTINGS: '{{ METEOR_SETTINGS }}'
-      APP_BUNDLE_DIR: /opt/meteor/dist/bundle
-   region: us-east-1
-   db_type: mongodb
+   region: us-west-2
+   db_type: mysql
    sg_db_label: database
    sg_web_label: web
-   git_ops: True
 infrastructure:
    vpc:
        stack_name: aws_vpc_2tier
-   db:
+   dockerhost:
+       stack_name: aws_ec2_dockerhost_dev
+       arguments:
+          size: t2.micro
+          disksize: 50
+#   kubernetes:
+#       dependencies:
+#           - infrastructure::dockerhost
+#       stack_name: gary:::public::Cluster/Kubernetes/Ec2/VPC/main
+#       arguments:
+#          AddCreds: 
+#              - name: aws
+#                type: aws
+#              - name: docker
+#          domain: test777.elasticdeploy.com
+#          parent_domain: elasticdeploy.com
+#          kube_node_size: t2.micro
+#          master_node_size: t2.micro
+   mongodb:
        stack_name: aws_ec2_mongodb
        arguments:
           dbs: 1
           size: t2.nano
-   dockerhost:
-       stack_name: aws_ec2_dockerhost_dev
-       arguments:
-          size: t2.medium
-          disksize: 50
+#   rds_mysql:
+#       stack_name: aws_db_rds
+#       arguments:
+#          flavor: "db.t2.micro"
+#          size: 5
+#          engine: "MySQL"
+#          az: False
 build:
-   leaderboard:
+   flask_sample_1:
        stack_name: build_dev
-       repo_url: https://github.com/bill12252016/leaderboard
-       repo_branch: dev
+       repo_url: https://github.com/bill12252016/flask_sample
+       repo_branch: dev1
        triggered_branches:
-                 - master
-                 - dev
+                 - dev1
        arguments:
           DOCKER_FILE_BUILD: configs/build/Dockerfile
           DockerProvider: docker.io
@@ -38,20 +53,24 @@ build:
            - name: deploy_1
        rename:
            EnvVars:
-             DockerImage: DOCKER_IMAGE_LEADERBOARD
+             DOCKER_IMAGE: DOCKER_IMAGE_FLASK
    triggers:
-       - name: leaderboard
+       - name: flask_sample_dev1
          type: trigger
-         path: deploy::leaderboard_nginx
+         path: deploy::flask_dev1
          channels:
              - deploy_1
 deploy:
-    leaderboard_nginx:
+    flask_dev1:
        stack_name: deploy_dev
        arguments:
            EnvVars:
-               APP_BUNDLE_DIR: /opt/meteor/dist/bundle
-               ROOT_URL: http://127.0.0.1
+               MYSQL_DB_NAME: flask
+               MYSQL_DB_USER: sample
+               MYSQL_DB_PASSWORD: admin123
+           PRE_SCRIPTS:
+              - install_mysql.sh
+              - createdb.sh
+              - create_schema.sh
            DOCKER_TEMPLATE_FILES:
-                 - template_file: configs/deploy/Dockerfile.ja2
-                 - template_file: configs/deploy/docker-compose.yml.ja2
+              - template_dir: configs/deploy
