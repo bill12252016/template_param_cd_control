@@ -1,4 +1,4 @@
-{{ DOCKER_DEPLOY_NAME }}:
+cs_colin_deploy_flask_dev1:
   restart: always
   build: ./
   ports:
