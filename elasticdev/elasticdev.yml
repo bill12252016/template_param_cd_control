@@ -20,7 +20,7 @@ infrastructure:
               - name: aws
                 type: aws
               - name: docker
-          domain: test600.elasticdeploy.com
+          domain: test777.elasticdeploy.com
           parent_domain: elasticdeploy.com
           kube_node_size: t2.micro
           master_node_size: t2.micro
