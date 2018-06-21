@@ -11,31 +11,31 @@ infrastructure:
        arguments:
           size: t2.micro
           disksize: 50
-   kubernetes:
-       dependencies:
-           - infrastructure::dockerhost
-       stack_name: gary:::public::Cluster/Kubernetes/Ec2/VPC/main
-       arguments:
-          AddCreds: 
-              - name: aws
-                type: aws
-              - name: docker
-          domain: test777.elasticdeploy.com
-          parent_domain: elasticdeploy.com
-          kube_node_size: t2.micro
-          master_node_size: t2.micro
-#   mongodb:
-#       stack_name: aws_ec2_mongodb
+#   kubernetes:
+#       dependencies:
+#           - infrastructure::dockerhost
+#       stack_name: gary:::public::Cluster/Kubernetes/Ec2/VPC/main
 #       arguments:
-#          dbs: 1
-#          size: t2.nano
-   rds_mysql:
-       stack_name: aws_db_rds
+#          AddCreds: 
+#              - name: aws
+#                type: aws
+#              - name: docker
+#          domain: test777.elasticdeploy.com
+#          parent_domain: elasticdeploy.com
+#          kube_node_size: t2.micro
+#          master_node_size: t2.micro
+   mongodb:
+       stack_name: aws_ec2_mongodb
        arguments:
-          flavor: "db.t2.micro"
-          size: 5
-          engine: "MySQL"
-          az: False
+          dbs: 1
+          size: t2.nano
+#   rds_mysql:
+#       stack_name: aws_db_rds
+#       arguments:
+#          flavor: "db.t2.micro"
+#          size: 5
+#          engine: "MySQL"
+#          az: False
 build:
    flask_sample_1:
        stack_name: build_dev
