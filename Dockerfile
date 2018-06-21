@@ -1,0 +1,2 @@
+FROM docker.io/bill12252016/meteror-todos:SVIZXIJNWQVZABXR
+EXPOSE 80
