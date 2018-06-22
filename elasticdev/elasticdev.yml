@@ -46,10 +46,10 @@ infrastructure:
 #                 - dev1
 #       arguments:
 #          DOCKER_FILE_BUILD: configs/build/Dockerfile
-#          DockerProvider: docker.io
-#          DockerUsername: bill12252016
-#          DockerRepoType: public
-#          DockerRepoName: meteror-todos
+#          DOCKER_PROVIDER: docker.io
+#          DOCKER_USERNAME: bill12252016
+#          DOCKER_REPO_TYPE: public
+#          DOCKER_REPO_NAME: meteror-todos
 #       results:
 #           - name: deploy_1
 #       rename:
