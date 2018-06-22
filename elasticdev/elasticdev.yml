@@ -13,8 +13,8 @@ infrastructure:
           engine: "MySQL"
           az: False
    ubuntu:
+       stack_name: ec2_server
        arguments:
-           stack_name: ec2_server
            hostname: ed_server_name_change_here
            size: t2.nano
            os: ubuntu
