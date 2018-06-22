@@ -12,3 +12,9 @@ infrastructure:
           size: 5
           engine: "MySQL"
           az: False
+   ubuntu:
+       stack_name: ec2_ubuntu
+       size: t2.nano
+       disksize: 50
+       key: first_ssh_key
+
