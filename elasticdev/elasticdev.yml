@@ -20,3 +20,4 @@ infrastructure:
            os: ubuntu
            disksize: 50
            key: first_ssh_key
+           sg_label: web
