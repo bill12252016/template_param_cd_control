@@ -1,6 +1,6 @@
 version: '2.0'
 services:
-  {{ DOCKER_DEPLOY_NAME }}:
+  cs_flask6_deploy_flask_dev1:
     restart: always
     build: ./
     logging:
