@@ -1,8 +1,14 @@
-{{ DOCKER_DEPLOY_NAME }}:
-  restart: always
-  build: ./
-  ports:
-    - "$HTTP_PORT:80"
-  env_file:
-    - .env
-  command: /usr/local/bin/gunicorn -w 2 -b:80 app:app
+version: '2.0'
+services:
+  {{ DOCKER_DEPLOY_NAME }}:
+    restart: always
+    build: ./
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+    ports:
+      - "$HTTP_PORT:80"
+    env_file:
+      - .env
+    command: /usr/local/bin/gunicorn -w 2 -b:80 app:app
