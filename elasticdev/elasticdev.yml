@@ -10,10 +10,10 @@ infrastructure:
            stack_name: elasticdev:::aws_vpc_2tier
            arguments:
                vpc_peer: null
-#       apigateway:
-#           stack_name: elasticdev:::api_gateway
-#           arguments:
-#               name: test3
+       apigateway:
+           stack_name: elasticdev:::api_gateway
+           arguments:
+               name: test3
 #       vpc:
 #           stack_name: elasticdev:::aws_vpc_2tier
 #           arguments:
