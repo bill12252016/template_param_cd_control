@@ -12,7 +12,8 @@ infrastructure:
                vpc_peer: null
        dockerhost:
            stack_name: elasticdev:::ec2_docker_host
-           dependencies: infrastructure::vpc
+           dependencies: 
+               - infrastructure::vpc
            arguments:
               size: t2.micro
               disksize: 25
