@@ -5,22 +5,31 @@ global_arguments:
    db_type: mysql
    sg_db_label: database
    sg_web_label: web
-infrastructure:
-       vpc:
-           stack_name: elasticdev:::aws_vpc_2tier
+build:
+   ci_example:
+           stack_name: elasticdev:::ec2_ci
            arguments:
-               vpc_peer: null
-       dockerhost:
-           stack_name: elasticdev:::ec2_docker_host
-           dependencies: 
-               - infrastructure::vpc
-           arguments:
-              size: t2.micro
-              disksize: 25
-           stack_vars:
-               - name: elasticdev:::ubuntu::ec2_ubuntu
-                 arguments:
-                      ip_key: public_ip
+               repo_url: https://github.com/bill12252016/flask_sample
+               repo_branch: branch
+               docker_repo: flask_sample
+               triggered_branches:
+                 - master
+#infrastructure:
+#       vpc:
+#           stack_name: elasticdev:::aws_vpc_2tier
+#           arguments:
+#               vpc_peer: null
+#       dockerhost:
+#           stack_name: elasticdev:::ec2_docker_host
+#           dependencies: 
+#               - infrastructure::vpc
+#           arguments:
+#              size: t2.micro
+#              disksize: 25
+#           stack_vars:
+#               - name: elasticdev:::ubuntu::ec2_ubuntu
+#                 arguments:
+#                      ip_key: public_ip
 #       vpc:
 #           stack_name: elasticdev:::aws_vpc_2tier
 #           arguments:
