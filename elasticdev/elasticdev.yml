@@ -1,7 +1,7 @@
 global_arguments:
    EnvVars:
       TEST_VARIABLE: HELLO
-   aws_default_region: us-west-2
+   aws_default_region: us-west-1
    db_type: mysql
    sg_db_label: database
    sg_web_label: web
