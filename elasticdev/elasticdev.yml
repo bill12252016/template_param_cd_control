@@ -34,17 +34,16 @@ build:
            triggered_branches:
              - master
 destroy:
-   main_destroy:
-       stack_name: elasticdev:::ed_core::callback_delete
-       arguments:
-           destroy_resources:
-               - provider: ec2
-                 resource_type: server
-               - provider: lightsail
-                 resource_type: server
-           keep_resources:
-               - provider: aws
-                 resource_type: ecr
+   stack_name: elasticdev:::ed_core::callback_delete
+   arguments:
+       destroy_resources:
+           - provider: ec2
+             resource_type: server
+           - provider: lightsail
+             resource_type: server
+       keep_resources:
+           - provider: aws
+             resource_type: ecr
 #infrastructure:
 #       vpc:
 #           stack_name: elasticdev:::aws_vpc_2tier
