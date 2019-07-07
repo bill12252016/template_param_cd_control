@@ -43,7 +43,7 @@ destroy:
              resource_type: server
        keep_resources:
            - provider: aws
-             resource_type: ecr
+             resource_type: ecr_repo
 #infrastructure:
 #       vpc:
 #           stack_name: elasticdev:::aws_vpc_2tier
